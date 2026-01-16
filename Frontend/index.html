@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>EcoRoute</title>
+    <link rel="shortcut icon" href="EcoRoute.png">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div>
+            <button class="toggle-button">
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+            </button>
+            <a href="index.html" class="main-header__brand">
+                <img src="EcoRoute.png" alt="Climate-Aware Route Planner">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="routes.html">Routes</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="climate-data.html">Climate Data</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="home.html">Home</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="routes.html">Routes</a>
+            </li>
+            <li class="mobile-nav__item  mobile-nav__item--cta">
+                <a href="climate-data.html">Climate Data</a>
+            </li>
+            <li class="mobile-nav__item  mobile-nav__item--cta">
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="page">
+
+        <!-- CENTER HEADING -->
+        <section class="page-header">
+            <h1>EcoRoute</h1>
+            <p class="subtitle">
+                A Climate-Aware Route Planner using Real-Time Location & Environmental Data
+            </p>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <section class="content-layout">
+
+            <!-- LEFT: ROUTE FORM -->
+            <div class="left-panel">
+                <h2>Plan Your Route</h2>
+
+                <form class="route-form" id="routeForm">
+                    <input type="text" id="from" placeholder="From or current location" list="fromSuggestions">
+                    <datalist id="fromSuggestions"></datalist>
+
+                    <input type="text" id="to" placeholder="To" list="toSuggestions">
+                    <datalist id="toSuggestions"></datalist>
+
+                    <button type="submit">Get Route</button>
+                </form>
+            </div>
+
+            <!-- RIGHT: INFO + MAP -->
+            <div class="right-panel">
+                <div class="info-box">
+                    📍 <strong>Location:</strong>
+                    <span id="locationName">Detecting...</span>
+                    &nbsp; | &nbsp;
+                    🌫️ <strong>AQI:</strong> <span id="aqi">--</span>
+                    &nbsp; | &nbsp;
+                    🌡️ <strong>Temp:</strong> <span id="temp">--</span> °C
+                </div>
+
+                <div id="map"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <nav>
+            <ul class="main-footer__links">
+                <li class="main-footer__link">
+                    <a href="#">Support</a>
+                </li>
+                <li class="main-footer__link">
+                    <a href="#">Terms Of Use</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
