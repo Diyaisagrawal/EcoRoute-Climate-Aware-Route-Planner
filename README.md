@@ -51,5 +51,11 @@ python app.py
 Open Frontend/index.html in a browser
 (or use Live Server in VS Code).
 
+##Screenshots
+Home Page
+Route Comparison
+
 ## Note
-Offline map graph is not included due to size constraints.
+The offline road network graph (jaipur_drive.graphml) is not included in the repository
+due to file size constraints.
+Routing currently works on an offline graph extracted for Jaipur city.
